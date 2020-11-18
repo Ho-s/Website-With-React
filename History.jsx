@@ -3,22 +3,26 @@ import React, { createRef, PureComponent } from 'react';
 class History extends PureComponent {
     state = {
         create: [],
+        picture:false,
+        num:1,
+        n:1,
+
         home: true,
         timer: false,
         about: false,
         news: false,
         gallery: false,
+
     }
 
     scrollRef = createRef()
     backgroundScroll = createRef()
     mainBackground = createRef()
 
-
     handelScroll = () => {
         let scrollTop = document.body.scrollTop
         this.backgroundScroll.current.style.backgroundPositionY = `${scrollTop / 3}px`
-        this.mainBackground.current.style.backgroundPositionY = `-${scrollTop / 4}px`
+        this.mainBackground.current.style.backgroundPositionY = `-${scrollTop / 6}px`
         if (scrollTop > 825) {
             this.scrollRef.current.style.position = 'fixed'
             this.scrollRef.current.style.top = '0'
@@ -50,7 +54,74 @@ class History extends PureComponent {
                 }
             })
         }, 900)
-        
+    }
+
+    clickCreateFirst=()=>{
+        this.setState({
+            picture:true,
+            num:11,
+            n:1,
+        })
+    }
+    clickCreateSecond=()=>{
+        this.setState({
+            picture:true,
+            num:21,
+            n:1,
+        })
+    }
+    clickCreateThird=()=>{
+        this.setState({
+            picture:true,
+            num:31,
+            n:1,
+        })
+    }
+    clickCreateFourth=()=>{
+        this.setState({
+            picture:true,
+            num:41,
+            n:1,
+        })
+    }
+    clickCreateFifth=()=>{
+        this.setState({
+            picture:true,
+            num:51,
+            n:1,
+        })
+    }
+
+    clickRemove=()=>{
+        this.setState({
+            picture:false,
+        })
+    }
+
+    clickRight=()=>{
+        if(this.state.n===5){
+            return
+        }else{
+            this.setState((prevState)=>{
+                return{
+                    num:prevState.num+1,
+                    n:prevState.n+1
+                }
+            })
+        }
+    }
+
+    clickLeft=()=>{
+        if(this.state.n===1){
+            return
+        }else{
+            this.setState((prevState)=>{
+                return{
+                    num:prevState.num-1,
+                    n:prevState.n-1
+                }
+            })
+        }
     }
 
     componentDidMount() {
@@ -66,7 +137,16 @@ class History extends PureComponent {
 
     render() {
         return (
-            <>
+            <>  
+                {this.state.picture && 
+                <div className='full'>
+                    <div className='full-top'>{this.state.n}/5</div>
+                    <div onClick={this.clickRemove} className='full-button'>X</div>
+                    <div onClick={this.clickLeft} className='full-left'>&#8592;</div>
+                    <div style={{backgroundImage:`url(./images/${this.state.num}.jpg)`}} className='full-middle'></div>
+                    <div onClick={this.clickRight} className='full-right'>&#8594;</div>
+                </div>
+                }
                 <header ref={this.backgroundScroll}>
                     <div className='top'>
                         <div className='top-left'></div>
@@ -115,13 +195,13 @@ class History extends PureComponent {
                     </div>
                     <div className='main-bottom'>
                         <div className='left'>
-                            <div className='first'></div>
-                            <div className='second'></div>
+                            <div onClick={this.clickCreateFirst} className='first'></div>
+                            <div onClick={this.clickCreateSecond} className='second'></div>
                         </div>
                         <div className='right'>
-                            <div className='third'></div>
-                            <div className='fourth'></div>
-                            <div className='fifth'></div>
+                            <div onClick={this.clickCreateThird} className='third'></div>
+                            <div onClick={this.clickCreateFourth} className='fourth'></div>
+                            <div onClick={this.clickCreateFifth} className='fifth'></div>
                         </div>
                     </div>
                 </main>

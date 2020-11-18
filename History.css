@@ -112,7 +112,7 @@ header{
 nav{
     margin-top: 50px;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
 }
 
 
@@ -374,33 +374,33 @@ main{
     width: 100%;
     height: 640px;
     border-bottom: 1px solid white;
-    background-image: url(./images/5.jpg);
+    background-image: url(./images/11.jpg);
 }
 .second{
     width: 100%;
     height: 360px;
     border-bottom: 1px solid white;
-    background-image: url(./images/6.jpg);
+    background-image: url(./images/21.jpg);
 }
 
 .third{
     width: 100%;
     height: 480px;
     border-bottom: 1px solid white;
-    background-image: url(./images/7.jpg);
+    background-image: url(./images/31.jpg);
 }
 .fourth{
     width: 49.9%;
     height: 520px;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
-    background-image: url(./images/9.jpg);
+    background-image: url(./images/41.jpg);
 }
 .fifth{
     width: 49.9%;
     height: 520px;
     border-bottom: 1px solid white;
-    background-image: url(./images/10.jpg);
+    background-image: url(./images/51.jpg);
 }
 
 @keyframes bigger{
@@ -445,4 +445,67 @@ main{
 .fourth:not(:hover),
 .fifth:not(:hover){
     animation: smaller 0.6s;
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.full{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    z-index: 2;
+    background-color: black;
+    animation: fadeIn 1s;
+}
+
+.full div{
+    position: fixed;
+    z-index: 3;
+    color: white;
+}
+
+.full-top{
+    top:10px;
+    right: 50%;
+}
+
+.full-button{
+    top:10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.full-left{
+    left: 10px;
+    top:50%;
+    cursor: pointer;
+}
+
+.full-right{
+    right: 10px;
+    top:50%;
+    cursor: pointer;
+}
+
+.full-middle{
+    margin: auto;
+    position: absolute;
+    left:0;
+    right: 0;
+    top:0;
+    bottom: 0; /*absolute 중앙정렬*/
+    width: 80vw;
+    height: 80vh;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
