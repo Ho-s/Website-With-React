@@ -98,9 +98,6 @@ header{
     line-height: 1.5;
 }
 
-/* .middle:hover{
-    transition: color red 2s;
-} */
 
 @keyframes opacityChange{
     0%{
@@ -113,8 +110,9 @@ header{
 }
 
 nav{
-    margin-top: 7vh;
+    margin-top: 50px;
     width: 100%;
+    z-index: 2;
 }
 
 
@@ -168,7 +166,6 @@ nav li a::after{
     transform: translateY(24px);
 }
 
-
 @keyframes xPlus{
     100%{
         transform: rotate(45deg);
@@ -189,6 +186,34 @@ nav li:hover ::after{
     animation: xMinus 0.7s forwards;
 }
 
+@keyframes goNormalBefore{
+    0%{
+        transform: rotate(45deg);
+    }
+    100%{
+        transform: rotate(0deg);
+        transform: translateY(-24px);
+    }
+}
+
+@keyframes goNormalAfter{
+    0%{
+        transform: rotate(-45deg);
+    }
+    100%{
+        transform: rotate(0deg);
+        transform: translateY(24px);
+    }
+}
+
+nav li :not(:hover)::before{
+    animation: goNormalBefore 0.7s ;
+}
+
+nav li :not(:hover)::after{
+    animation: goNormalAfter 0.7s ;
+}
+
 .home ::before{
     transform: rotate(45deg);
     animation: '';
@@ -197,6 +222,14 @@ nav li:hover ::after{
 .home ::after{
     transform: rotate(-45deg);
     animation: '';
+}
+
+.home :not(:hover)::before{
+    animation: 0 ;
+}
+
+.home :not(:hover)::after{
+    animation: 0 ;
 }
 
 main{
@@ -212,7 +245,7 @@ main{
     background-repeat: no-repeat;
     background-size: cover;
     border-top:1px solid white;
-    min-width: 1630px;
+    min-width: 1390px;
 }
 
 .inside-main-top{
@@ -224,6 +257,28 @@ main{
     background-color: white;
     min-width: 1000px;
     opacity: 0.9;
+}
+
+@keyframes fadeOut{
+    0%{
+        opacity: 0;
+    }
+
+    50%{
+        opacity: 1;
+    }
+
+    100%{
+        opacity: 0;
+        top:-45px;
+    }
+}
+
+.heart{
+    position: absolute;
+    top:0;
+    right: 0;
+    animation: fadeOut 1s forwards;
 }
 
 .inside-main-top::after{
@@ -293,14 +348,6 @@ main{
     transform: translateY(28px);
 }
 
-.inside-main-top-down:hover:before{
-    animation: xPlus 0.7s forwards;
-}
-
-.inside-main-top-down:hover:after{
-    animation: xMinus 0.7s forwards;
-}
-
 .main-bottom div{
     float: left;
     background-repeat: no-repeat;
@@ -316,6 +363,13 @@ main{
     border-bottom:1px solid white;
 }
 
+.right{
+    float: left;
+    width: 49.96%;
+    border-top:1px solid white;
+    border-bottom:1px solid white;
+}
+
 .first{
     width: 100%;
     height: 640px;
@@ -328,52 +382,67 @@ main{
     border-bottom: 1px solid white;
     background-image: url(./images/6.jpg);
 }
+
 .third{
-    width: 100%;
-    height: 400px;
-    background-image: url(./images/8.jpg);
-}
-
-@keyframes sth{
-    0% { background-size: 100% auto; }
-    100%{
-        background-size: 110% auto;
-    }
-}
-
-.main-bottom div:hover{
-    animation: sth 0.6s forwards;
-}
-
-.right{
-    float: left;
-    width: 49.96%;
-    border-top:1px solid white;
-    border-bottom:1px solid white;
-}
-
-.fourth{
     width: 100%;
     height: 480px;
     border-bottom: 1px solid white;
     background-image: url(./images/7.jpg);
 }
-.fifth{
+.fourth{
     width: 49.9%;
     height: 520px;
     border-right: 1px solid white;
     border-bottom: 1px solid white;
     background-image: url(./images/9.jpg);
 }
-.sixth{
+.fifth{
     width: 49.9%;
     height: 520px;
     border-bottom: 1px solid white;
     background-image: url(./images/10.jpg);
 }
-.seventh{
-    width: 100%;
-    height: 400px;
-    background-image: url(./images/11.png);
-    background-position: top !important;
+
+@keyframes bigger{
+    0% {
+        background-size: 100% auto;
+        opacity: 1;
+        filter: grayscale(0);
+    }
+    100%{
+        background-size: 110% auto;
+        opacity: .8;
+        filter: grayscale(1);
+    }
+}
+
+@keyframes smaller{
+    0% {
+        background-size: 110% auto;
+        opacity: .8;
+        filter: grayscale(1);
+    }
+    100%{
+        background-size: 100% auto;
+        opacity: 1;
+        filter: grayscale(0);
+    }
+    
+}
+
+.first:hover,
+.second:hover,
+.third:hover,
+.fourth:hover,
+.fifth:hover{
+    animation: bigger 0.6s forwards;
+    
+}
+
+.first:not(:hover),
+.second:not(:hover),
+.third:not(:hover),
+.fourth:not(:hover),
+.fifth:not(:hover){
+    animation: smaller 0.6s;
 }

@@ -6,7 +6,7 @@ module.exports={
     devtool: 'eval',
 
     resolve:{
-        extensions:['.js','.jsx']
+        extensions:['.js','.jsx','.css']
     },
 
     entry:{
