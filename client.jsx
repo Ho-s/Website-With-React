@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom'
 import { hot } from 'react-hot-loader/root'
 
-import History from './History'
+import Home from './Home'
 
-const Hot = hot(History)
+const Hot = hot(Home)
 
 ReactDOM.render(<Hot />, document.querySelector('#root'))

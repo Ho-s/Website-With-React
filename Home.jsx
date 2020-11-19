@@ -1,6 +1,6 @@
 import React, { createRef, PureComponent } from 'react';
 
-class History extends PureComponent {
+class Home extends PureComponent {
     state = {
         create: [],
         picture:false,
@@ -12,7 +12,6 @@ class History extends PureComponent {
         about: false,
         news: false,
         gallery: false,
-
     }
 
     scrollRef = createRef()
@@ -150,29 +149,30 @@ class History extends PureComponent {
                 <header ref={this.backgroundScroll}>
                     <div className='top'>
                         <div className='top-left'></div>
-                        <a className='top-Middle' href=''>You<br /> And<br /> I</a>
+                        <div className='top-Middle'>You<br /> And<br /> I</div>
                         <div className='top-right'></div>
                     </div>
-                    <div className='middle'>Ever since I met you,<br />There has not been a moment that i ain't think about you.</div>
+                    <div className='middle'>Ever since I met you,<br />There has not been div moment that i ain't think about you.</div>
                     <nav ref={this.scrollRef}>
                         <ul>
                             <li className='home'>
-                                <a href=''>Home</a>
+                                <a>Home</a>
                             </li>
                             <li className='timer'>
-                                <a href=''>Timer</a>
+                                <a>Timer</a>
                             </li>
                             <li className='about us'>
-                                <a href=''>AboutUs</a>
+                                <a>AboutUs</a>
                             </li>
                             <li className='news'>
-                                <a href=''>News</a>
+                                <a>News</a>
                             </li>
                             <li className='gallery'>
-                                <a href=''>Gallery</a> {/*2019 2018 2017 */}
+                                <a>Gallery</a> {/*2019 2018 2017 */}
                             </li>
                         </ul>
                     </nav>
+                    {/* <Route path ='./Timer'component={Timer}></Route> */}
                 </header>
                 <main>
                     <div ref={this.mainBackground} className='main-top'>
@@ -209,5 +209,5 @@ class History extends PureComponent {
         )
     }
 };
-export default History
+export default Home
 

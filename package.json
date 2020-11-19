@@ -10,9 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "babel-loader": "^8.2.1",
-    "bable-loader": "0.0.1-security",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
