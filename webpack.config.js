@@ -2,8 +2,8 @@ const path=require('path')
 const webpack = require('webpack')
 
 module.exports={
-    mode: 'development', 
-    devtool: 'eval',
+    mode: 'development', //실서바스:production
+    devtool: 'eval', 
 
     resolve:{
         extensions:['.js','.jsx','.css']
@@ -22,16 +22,21 @@ module.exports={
                     ['@babel/preset-env',{
                         targets:{
                             browsers:['>2% in KR']
-                        }
+                        },
+                        debug:true,
                     }],
                     '@babel/preset-react'
                 ],
                 plugins:[
                     '@babel/plugin-proposal-class-properties',
-                    'react-hot-loader/babel'
-                ],
+                ]
             }
-        }]
+        },
+        //  {
+        //     test: /\.css$/,
+        //     use: ['style-loader', 'css-loader'],
+        //   }
+    ]
     }, 
     plugins:[
         new webpack.LoaderOptionsPlugin({debug:true})
@@ -42,6 +47,5 @@ module.exports={
     }, 
     devServer:{
         historyApiFallback:true,
-        hot:true,
     }
 }

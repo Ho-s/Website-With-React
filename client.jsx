@@ -1,9 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
-import { hot } from 'react-hot-loader/root'
 
-import Home from './Home'
+import Come from './Come'
 
-const Hot = hot(Home)
-
-ReactDOM.render(<Hot />, document.querySelector('#root'))
+ReactDOM.render(<Come />, document.querySelector('#root'))
