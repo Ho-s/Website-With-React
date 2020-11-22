@@ -146,6 +146,25 @@ class Home extends PureComponent {
                     <div onClick={this.clickRight} className='full-right'>&#8594;</div>
                 </div>
                 }
+                <nav ref={this.scrollRef}>
+                    <ul>
+                        <li className='home'>
+                            <a>Home</a>
+                        </li>
+                        <li className='timer'>
+                            <a>Timer</a>
+                        </li>
+                        <li className='about us'>
+                            <a>AboutUs</a>
+                        </li>
+                        <li className='news'>
+                            <a>News</a>
+                        </li>
+                        <li className='gallery'>
+                            <a>Gallery</a> {/*2019 2018 2017 * 1초만에 보기*/}
+                        </li>
+                    </ul>
+                </nav>
                 <header ref={this.backgroundScroll}>
                     <div className='top'>
                         <div className='top-left'></div>
@@ -153,26 +172,6 @@ class Home extends PureComponent {
                         <div className='top-right'></div>
                     </div>
                     <div className='middle'>Ever since I met you,<br />There has not been div moment that i ain't think about you.</div>
-                    <nav ref={this.scrollRef}>
-                        <ul>
-                            <li className='home'>
-                                <a>Home</a>
-                            </li>
-                            <li className='timer'>
-                                <a>Timer</a>
-                            </li>
-                            <li className='about us'>
-                                <a>AboutUs</a>
-                            </li>
-                            <li className='news'>
-                                <a>News</a>
-                            </li>
-                            <li className='gallery'>
-                                <a>Gallery</a> {/*2019 2018 2017 */}
-                            </li>
-                        </ul>
-                    </nav>
-                    {/* <Route path ='./Timer'component={Timer}></Route> */}
                 </header>
                 <main>
                     <div ref={this.mainBackground} className='main-top'>
