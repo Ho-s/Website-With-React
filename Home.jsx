@@ -6,15 +6,8 @@ class Home extends PureComponent {
         picture:false,
         num:1,
         n:1,
-
-        home: true,
-        timer: false,
-        about: false,
-        news: false,
-        gallery: false,
     }
 
-    scrollRef = createRef()
     backgroundScroll = createRef()
     mainBackground = createRef()
 
@@ -22,19 +15,6 @@ class Home extends PureComponent {
         let scrollTop = document.body.scrollTop
         this.backgroundScroll.current.style.backgroundPositionY = `${scrollTop / 3}px`
         this.mainBackground.current.style.backgroundPositionY = `-${scrollTop / 6}px`
-        if (scrollTop > 825) {
-            this.scrollRef.current.style.position = 'fixed'
-            this.scrollRef.current.style.top = '0'
-            this.scrollRef.current.style.backgroundColor = 'violet'
-            this.scrollRef.current.style.marginTop = '0'
-            this.scrollRef.current.style.animation = 'opacityChange 2s forwards'
-        } else {
-            this.scrollRef.current.style.position = ''
-            this.scrollRef.current.style.top = ''
-            this.scrollRef.current.style.backgroundColor = ''
-            this.scrollRef.current.style.marginTop = '50px'
-            this.scrollRef.current.style.animation = ''
-        }
     }
     
     clickLoveMe = (e) => {
@@ -127,8 +107,6 @@ class Home extends PureComponent {
         window.addEventListener('scroll', this.handelScroll);
     }
 
-    componentDidUpdate() {
-    }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handelScroll);
@@ -146,25 +124,6 @@ class Home extends PureComponent {
                     <div onClick={this.clickRight} className='full-right'>&#8594;</div>
                 </div>
                 }
-                <nav ref={this.scrollRef}>
-                    <ul>
-                        <li className='home'>
-                            <a>Home</a>
-                        </li>
-                        <li className='timer'>
-                            <a>Timer</a>
-                        </li>
-                        <li className='about us'>
-                            <a>AboutUs</a>
-                        </li>
-                        <li className='news'>
-                            <a>News</a>
-                        </li>
-                        <li className='gallery'>
-                            <a>Gallery</a> {/*2019 2018 2017 * 1초만에 보기*/}
-                        </li>
-                    </ul>
-                </nav>
                 <header ref={this.backgroundScroll}>
                     <div className='top'>
                         <div className='top-left'></div>
@@ -209,4 +168,3 @@ class Home extends PureComponent {
     }
 };
 export default Home
-

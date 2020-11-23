@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
 
-import Come from './Come'
+import Main from './Main'
 
-ReactDOM.render(<Come />, document.querySelector('#root'))
+ReactDOM.render(<Main />, document.querySelector('#root'))
