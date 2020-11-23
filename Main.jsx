@@ -1,5 +1,5 @@
-import React, { createRef,PureComponent } from 'react';
-import { BrowserRouter,Route,Link } from'react-router-dom';
+import React, { createRef, PureComponent } from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import Home from './Home'
 import Timer from './Timer'
 import AboutUs from './AboutUs'
@@ -7,7 +7,7 @@ import News from './News'
 import Gallery from './Gallery'
 
 class Main extends PureComponent {
-    state={
+    state = {
         home: true,
         timer: false,
         about: false,
@@ -18,7 +18,7 @@ class Main extends PureComponent {
     scrollRef = createRef()
     handleScroll = () => {
         let scrollTop = document.body.scrollTop
-        if(this.state.home){
+        if (this.state.home) {
             if (scrollTop > 825) {
                 this.scrollRef.current.style.position = 'fixed'
                 this.scrollRef.current.style.top = '0'
@@ -31,15 +31,15 @@ class Main extends PureComponent {
                 this.scrollRef.current.style.backgroundColor = ''
                 this.scrollRef.current.style.animation = ''
             }
-        }else{
-                this.scrollRef.current.style.position = 'fixed'
-                this.scrollRef.current.style.top = '0'
-                this.scrollRef.current.style.backgroundColor = 'transparent'
-                this.scrollRef.current.style.animation = ''
+        } else {
+            this.scrollRef.current.style.position = 'fixed'
+            this.scrollRef.current.style.top = '0'
+            this.scrollRef.current.style.backgroundColor = 'transparent'
+            this.scrollRef.current.style.animation = ''
         }
     }
 
-    clickHome=()=>{
+    clickHome = () => {
         this.setState({
             home: true,
             timer: false,
@@ -49,7 +49,7 @@ class Main extends PureComponent {
         })
     }
 
-    clickTimer=()=>{
+    clickTimer = () => {
         this.setState({
             home: false,
             timer: true,
@@ -59,7 +59,7 @@ class Main extends PureComponent {
         })
     }
 
-    clickAboutUs=()=>{
+    clickAboutUs = () => {
         this.setState({
             home: false,
             timer: false,
@@ -69,7 +69,7 @@ class Main extends PureComponent {
         })
     }
 
-    clickNews=()=>{
+    clickNews = () => {
         this.setState({
             home: false,
             timer: false,
@@ -79,7 +79,7 @@ class Main extends PureComponent {
         })
     }
 
-    clickGallery=()=>{
+    clickGallery = () => {
         this.setState({
             home: false,
             timer: false,
@@ -89,33 +89,33 @@ class Main extends PureComponent {
         })
     }
 
-    before={
+    before = {
         // "&::before": {
-            position: 'absolute',
-            width: '100%',
-            left: '0',
-            top: '50%',
-            height: '2px',
-            marginTop: '-1px',
-            background: '#fff',
-            content: `''`,
-            transform: 'translateY(-24px)'
+        position: 'absolute',
+        width: '100%',
+        left: '0',
+        top: '50%',
+        height: '2px',
+        marginTop: '-1px',
+        background: '#fff',
+        content: `''`,
+        transform: 'translateY(-24px)'
         // },
     }
-    after={
+    after = {
         // "&::after":{
-            position: 'absolute',
-            width: '100%',
-            left: '0',
-            top: '50%',
-            height: '2px',
-            marginTop: '-1px',
-            background: '#fff',
-            content: `''`,
-            transform: 'translateY(24px)',
+        position: 'absolute',
+        width: '100%',
+        left: '0',
+        top: '50%',
+        height: '2px',
+        marginTop: '-1px',
+        background: '#fff',
+        content: `''`,
+        transform: 'translateY(24px)',
         // }
     }
-    beforeNormal={
+    beforeNormal = {
         position: 'absolute',
         width: '100%',
         left: '0',
@@ -128,7 +128,7 @@ class Main extends PureComponent {
         transform: 'rotate(45deg)',
         animation: `''`
     }
-    afterNormal={
+    afterNormal = {
         position: 'absolute',
         width: '100%',
         left: '0',
@@ -146,7 +146,7 @@ class Main extends PureComponent {
         window.addEventListener('scroll', this.handleScroll);
     }
 
-    componentDidUpdate(){
+    componentDidUpdate() {
         this.handleScroll()
     }
 
@@ -156,12 +156,12 @@ class Main extends PureComponent {
 
     render() {
         return (
-            <BrowserRouter>        
+            <BrowserRouter>
                 <nav ref={this.scrollRef}>
                     <ul>
                         <li className='home'>
                             {this.state.home ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
-                            <Link onClick={this.clickHome} to='/home'>Home</Link>   
+                            <Link onClick={this.clickHome} to='/home'>Home</Link>
                             {this.state.home ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
                         </li>
                         <li className='timer'>
