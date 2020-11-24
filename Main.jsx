@@ -34,7 +34,7 @@ class Main extends PureComponent {
         } else {
             this.scrollRef.current.style.position = 'fixed'
             this.scrollRef.current.style.top = '0'
-            this.scrollRef.current.style.backgroundColor = 'transparent'
+            this.scrollRef.current.style.backgroundColor = 'rgb(199, 199, 199)'
             this.scrollRef.current.style.animation = ''
         }
     }
@@ -159,27 +159,27 @@ class Main extends PureComponent {
             <BrowserRouter>
                 <nav ref={this.scrollRef}>
                     <ul>
-                        <li className='home'>
+                        <li>
                             {this.state.home ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
                             <Link onClick={this.clickHome} to='/home'>Home</Link>
                             {this.state.home ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
                         </li>
-                        <li className='timer'>
+                        <li>
                             {this.state.timer ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
                             <Link onClick={this.clickTimer} to='/timer'>Timer</Link>
                             {this.state.timer ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
                         </li>
-                        <li className='aboutUs'>
+                        <li>
                             {this.state.about ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
                             <Link onClick={this.clickAboutUs} to='/aboutUs'>AboutUs</Link>
                             {this.state.about ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
                         </li>
-                        <li className='news'>
+                        <li>
                             {this.state.news ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
                             <Link onClick={this.clickNews} to='/news'>News</Link>
                             {this.state.news ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
                         </li>
-                        <li className='gallery'>
+                        <li>
                             {this.state.gallery ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
                             <Link onClick={this.clickGallery} to='/gallery'>Gallery</Link> {/*2019 2018 2017 * 1초만에 보기*/}
                             {this.state.gallery ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
@@ -192,6 +192,10 @@ class Main extends PureComponent {
                     <Route path='/aboutUs' component={AboutUs}></Route>
                     <Route path='/news' component={News}></Route>
                     <Route path='/gallery' component={Gallery}></Route>
+                </div>
+                <div style={{padding: '70px 0',width: `100%`,float: 'right',backgroundColor:'white',textAlign:'center'}}>
+                    <div >Ho-s ©2020·Privacy Policy</div>
+                    <div>https://github.com/Ho-s</div>
                 </div>
             </BrowserRouter>
         )

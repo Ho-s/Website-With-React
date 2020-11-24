@@ -42,6 +42,7 @@ class Home extends PureComponent {
             n: 1,
         })
     }
+
     clickCreateSecond = () => {
         this.setState({
             picture: true,
@@ -49,6 +50,7 @@ class Home extends PureComponent {
             n: 1,
         })
     }
+
     clickCreateThird = () => {
         this.setState({
             picture: true,
@@ -56,6 +58,7 @@ class Home extends PureComponent {
             n: 1,
         })
     }
+
     clickCreateFourth = () => {
         this.setState({
             picture: true,
@@ -63,6 +66,7 @@ class Home extends PureComponent {
             n: 1,
         })
     }
+    
     clickCreateFifth = () => {
         this.setState({
             picture: true,

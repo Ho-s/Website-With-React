@@ -7,7 +7,6 @@ html,body{
     min-width: 1000px;
 }
 
-
 ::-webkit-scrollbar-track {
     background-color: white;
     border-radius: 10px;
@@ -120,7 +119,7 @@ nav{
     background-color: rgb(199, 199, 199);
     animation: 0;
     width: 100%;
-    z-index: 3;
+    z-index: 1;
 }
 
 
@@ -223,23 +222,6 @@ nav li a::after{
     transform: translateY(24px);
 } */
 
-/* .home ::before{
-    transform: rotate(45deg);
-    animation: '';
-}
-
-.home ::after{
-    transform: rotate(-45deg);
-    animation: '';
-} */
-
-/* .home :not(:hover)::before{
-    animation: 0 ;
-}
-
-.home :not(:hover)::after{
-    animation: 0 ;
-} */
 
 main{
     float: left;
@@ -695,7 +677,7 @@ main{
 .about-top,
 .about-bottom{
     width: 100%;
-    height: 70vh;
+    height: 1000px;
     background-color: white;
 }
 
@@ -706,8 +688,8 @@ main{
 .about-top-left,
 .about-bottom-right{
     float: left;
-    width: 50%;
-    height: 100%;
+    width: 800px;
+    height: 1000px;
     cursor: none;
     position: relative;
 }
@@ -715,27 +697,74 @@ main{
 .about-top-left{
     background-image: url(./images/6.jpg);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 800px 1000px;
 }
 
 .about-top-right,
 .about-bottom-left{
     float: left;
-    width: 50%;
+    width: calc(100% - 800px);
     height: 100%;
 }
 
 .about-bottom-right{
     background-image: url(./images/7.jpg);
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: 800px 1000px;
 }
 
 .zoom{
-    background-color: white;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
+    background-color: transparent;
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    border: 2px solid black;
     position: absolute;
-    zoom: 3;
+    z-index: 2;
+    cursor: none;
+    background-repeat: no-repeat;
+    background-size: 1600px 2000px;
 }
+
+/* News Space */
+/* News Space */
+/* News Space */
+/* News Space */
+/* News Space */
+
+.news-div>div{
+    width: 100%;
+    height: 1000px;
+    background-color: white;
+}
+
+.news-write{
+    float: left;
+    width: 50%;
+    height: 100%;
+}
+
+.news-photo{
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: grey;
+}
+
+.news-div-wrapper:hover div:nth-of-type(1){
+    animation: xPlus 0.7s forwards;
+}
+
+.news-div-wrapper:hover div:nth-of-type(2){
+    animation: xMinus 0.7s forwards;
+}
+
+/* Gallery Space */
+/* Gallery Space */
+/* Gallery Space */
+/* Gallery Space */
+/* Gallery Space */
+
