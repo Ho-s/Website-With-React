@@ -2,13 +2,13 @@ import React, { PureComponent } from 'react';
 
 Date.prototype.getInterval = function (otherDate) {
     let interval;
- 
-    if(this > otherDate)
+
+    if (this > otherDate)
         interval = this.getTime() - otherDate.getTime()
     else
         interval = otherDate.getTime() - this.getTime()
- 
-    return Math.ceil(interval / (1000*60*60*24))
+
+    return Math.ceil(interval / (1000 * 60 * 60 * 24))
 }
 const date = new Date()
 const dt = new Date('2017-12-23')
@@ -56,26 +56,26 @@ const FlipUnitContainer = ({ digit, shuffle, unit }) => {
 
     return (
         <div className={'flipUnitContainer'}>
-                <div className={'upperCard'}>
-                    <span>{currentDigit}</span>
-                </div>
-                <div className={'lowerCard'}>
-                    <span>{previousDigit}</span>
-                </div>
-                <div className={`flipCard ${animation1}`}>
-                    <span>{digit1}</span>
-                </div>
-                <div className={`flipCard ${animation2}`}>
-                    <span>{digit2}</span>
-                </div>
+            <div className={'upperCard'}>
+                <span>{currentDigit}</span>
+            </div>
+            <div className={'lowerCard'}>
+                <span>{previousDigit}</span>
+            </div>
+            <div className={`flipCard ${animation1}`}>
+                <span>{digit1}</span>
+            </div>
+            <div className={`flipCard ${animation2}`}>
+                <span>{digit2}</span>
+            </div>
         </div>
     );
 };
 
 class Timer extends PureComponent {
     state = {
-        days:0,
-        daysSuffle:true,
+        days: 0,
+        daysSuffle: true,
         hours: 0,
         hoursShuffle: true,
         minutes: 0,
@@ -92,9 +92,9 @@ class Timer extends PureComponent {
         clearInterval(this.timerID);
     }
 
-    updateTime(){
+    updateTime() {
         const time = new Date;
-        const days=result;
+        const days = result;
         const hours = time.getHours();
         const minutes = time.getMinutes();
         const seconds = time.getSeconds();
@@ -146,11 +146,11 @@ class Timer extends PureComponent {
         return (
             <>
                 <div className='timer-left'>
-                        <FlipUnitContainer
-                            unit={'days'}
-                            digit={days}
-                            shuffle={daysSuffle}
-                        />
+                    <FlipUnitContainer
+                        unit={'days'}
+                        digit={days}
+                        shuffle={daysSuffle}
+                    />
                     <div className={'flipClock'}>
 
                         <FlipUnitContainer
