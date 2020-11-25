@@ -79,30 +79,6 @@ class News extends PureComponent {
         }
     }
 
-    before = {
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: 'black',
-        content: `''`,
-        transform: 'translateY(-24px)'
-    }
-
-    after = {
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: 'black',
-        content: `''`,
-        transform: 'translateY(24px)',
-    }
-
     normal={
         width: '80px',
         height: '50px',
@@ -139,9 +115,9 @@ class News extends PureComponent {
                             <div style={{fontSize:'20px',marginLeft:'100px',marginTop:'30px'}}>dsf<br/>sdfd<br/>fs<br/>fsfsfss<br/>dffs<br/>dsdf<br/>sdff<br/>sdfs<br/>dfdssdf</div>
                             <div style={{marginTop:'30px',marginLeft:'100px',position:'relative'}}>
                                 <div onClick={this.clickCreateFirst} className='news-div-wrapper' style={this.normal}>
-                                    <div style={this.before}></div>
+                                    <div style={{backgroundColor:'black'}} className='before'></div>
                                     Look
-                                    <div style={this.after}></div>
+                                    <div style={{backgroundColor:'black'}} className='after'></div>
                                 </div>
                             </div>
                         </div>
@@ -156,9 +132,9 @@ class News extends PureComponent {
                             <div style={{fontSize:'20px',marginLeft:'100px',marginTop:'30px'}}>dsf<br/>sdfd<br/>fs<br/>fsfsfss<br/>dffs<br/>dsdf<br/>sdff<br/>sdfs<br/>dfdssdf</div>
                             <div style={{marginTop:'30px',marginLeft:'100px',position:'relative'}}>
                                 <div onClick={this.clickCreateSecond} className='news-div-wrapper' style={this.normal}>
-                                    <div style={this.before}></div>
+                                    <div style={{backgroundColor:'black'}} className='before'></div>
                                     Look
-                                    <div style={this.after}></div>
+                                    <div style={{backgroundColor:'black'}} className='after'></div>
                                 </div>
                             </div>
                         </div>
@@ -175,9 +151,9 @@ class News extends PureComponent {
                             <div style={{fontSize:'20px',marginLeft:'100px',marginTop:'30px'}}>dsf<br/>sdfd<br/>fs<br/>fsfsfss<br/>dffs<br/>dsdf<br/>sdff<br/>sdfs<br/>dfdssdf</div>
                             <div style={{marginTop:'30px',marginLeft:'100px',position:'relative'}}>
                                 <div onClick={this.clickCreateThird} className='news-div-wrapper' style={this.normal}>
-                                    <div style={this.before}></div>
+                                    <div style={{backgroundColor:'black'}} className='before'></div>
                                     Look
-                                    <div style={this.after}></div>
+                                    <div style={{backgroundColor:'black'}} className='after'></div>
                                 </div>
                             </div>
                         </div>
@@ -192,9 +168,9 @@ class News extends PureComponent {
                             <div style={{fontSize:'20px',marginLeft:'100px',marginTop:'30px'}}>dsf<br/>sdfd<br/>fs<br/>fsfsfss<br/>dffs<br/>dsdf<br/>sdff<br/>sdfs<br/>dfdssdf</div>
                             <div style={{marginTop:'30px',marginLeft:'100px',position:'relative'}}>
                                 <div onClick={this.clickCreateFourth} className='news-div-wrapper' style={this.normal}>
-                                    <div style={this.before}></div>
+                                    <div style={{backgroundColor:'black'}} className='before'></div>
                                     Look
-                                    <div style={this.after}></div>
+                                    <div style={{backgroundColor:'black'}} className='after'></div>
                                 </div>
                             </div>
                         </div>
@@ -211,9 +187,9 @@ class News extends PureComponent {
                             <div style={{fontSize:'20px',marginLeft:'100px',marginTop:'30px'}}>dsf<br/>sdfd<br/>fs<br/>fsfsfss<br/>dffs<br/>dsdf<br/>sdff<br/>sdfs<br/>dfdssdf</div>
                             <div style={{marginTop:'30px',marginLeft:'100px',position:'relative'}}>
                                 <div onClick={this.clickCreateFifth} className='news-div-wrapper' style={this.normal}>
-                                    <div style={this.before}></div>
+                                    <div style={{backgroundColor:'black'}} className='before'></div>
                                     Look
-                                    <div style={this.after}></div>
+                                    <div style={{backgroundColor:'black'}} className='after'></div>
                                 </div>
                             </div>
                         </div>

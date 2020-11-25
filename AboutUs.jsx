@@ -55,30 +55,6 @@ class AboutUs extends PureComponent {
         this.right.current.removeEventListener('mousemove', this.updateMousePositionRight)
     }
 
-    before = {
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: 'black',
-        content: `''`,
-        transform: 'translateY(-24px)'
-    }
-
-    after = {
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: 'black',
-        content: `''`,
-        transform: 'translateY(24px)',
-    }
-
     normal={
         width: '80px',
         height: '50px',
@@ -111,9 +87,9 @@ class AboutUs extends PureComponent {
                         <div style={{marginLeft:'100px',marginTop:'30px'}}>BlaBla</div>
                         <div style={{marginTop:'30px',marginLeft:'100px',position:'relative'}}>
                             <div className='news-div-wrapper' style={this.normal}>
-                                <div style={this.before}></div>
+                                <div style={{backgroundColor:'black'}} className='before'></div>
                                 Love Me
-                                <div style={this.after}></div>
+                                <div style={{backgroundColor:'black'}} className='after'></div>
                             </div>
                         </div>
                     </div>
@@ -124,9 +100,9 @@ class AboutUs extends PureComponent {
                         <div style={{marginLeft:'100px',marginTop:'30px'}}>BlaBla</div>
                         <div style={{marginTop:'30px',marginLeft:'100px',position:'relative'}}>
                             <div className='news-div-wrapper' style={this.normal}>
-                                <div style={this.before}></div>
+                                <div style={{backgroundColor:'black'}} className='before'></div>
                                 Love Me
-                                <div style={this.after}></div>
+                                <div style={{backgroundColor:'black'}} className='after'></div>
                             </div>
                         </div>
                     </div>

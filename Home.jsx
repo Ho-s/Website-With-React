@@ -144,6 +144,7 @@ class Home extends PureComponent {
                                 <div className='inside-main-top-up-down'>qwhrasdasdasdasdhqeqjwejkeqhqeqjwejkehqeqjwejkekwkqwekqwrkk<br /> wqkkrwqw ekqewkqhqeqjwejkehqeqjwejkehqeqjwejkeekqqkwekw<br /> ekqwek qwkq ehqeqjwejkehqeqjwejkehqeqjwejkehqeqjwejkekwkwqkqwek qwk</div>
                             </div>
                             <div className='inside-main-top-down' onClick={this.clickLoveMe}>Love Me
+                                <div className='before' style={{backgroundColor:'black'}}></div>
                                 {this.state.create.length >= 1 && <div className='heart' style={{ top: '20px', right: '40px' }}>	&#128525;</div>}
                                 {this.state.create.length >= 2 && <div className='heart' style={{ top: '12px', right: '-20px' }}>&#128420;</div>}
                                 {this.state.create.length >= 3 && <div className='heart' style={{ top: '35px', right: '-33px' }}>&#10085;</div>}
@@ -152,7 +153,9 @@ class Home extends PureComponent {
                                 {this.state.create.length >= 6 && <div className='heart' style={{ top: '17px', right: '50px' }}>&#128152;</div>}
                                 {this.state.create.length >= 7 && <div className='heart' style={{ top: '-2px', right: '10px' }}>&#10084;</div>}
                                 {this.state.create.length >= 8 && <div className='heart' style={{ top: '9px', right: '-2px' }}>&#10083;</div>}
+                                <div className='after' style={{backgroundColor:'black'}}></div>
                             </div>
+                            
                         </div>
                     </div>
                     <div className='main-bottom'>

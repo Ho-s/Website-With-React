@@ -19,12 +19,11 @@ class Main extends PureComponent {
     handleScroll = () => {
         let scrollTop = document.body.scrollTop
         if (this.state.home) {
-            if (scrollTop > 825) {
+            if (scrollTop > 900) {
                 this.scrollRef.current.style.position = 'fixed'
                 this.scrollRef.current.style.top = '0'
                 this.scrollRef.current.style.backgroundColor = 'violet'
                 this.scrollRef.current.style.marginTop = '0'
-                this.scrollRef.current.style.animation = 'opacityChange 2s forwards'
             } else {
                 this.scrollRef.current.style.position = ''
                 this.scrollRef.current.style.top = ''
@@ -89,59 +88,6 @@ class Main extends PureComponent {
         })
     }
 
-    before = {
-        // "&::before": {
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: '#fff',
-        content: `''`,
-        transform: 'translateY(-24px)'
-        // },
-    }
-    after = {
-        // "&::after":{
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: '#fff',
-        content: `''`,
-        transform: 'translateY(24px)',
-        // }
-    }
-    beforeNormal = {
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: '#fff',
-        content: `''`,
-        transform: 'translateY(-24px)',
-        transform: 'rotate(45deg)',
-        animation: `''`
-    }
-    afterNormal = {
-        position: 'absolute',
-        width: '100%',
-        left: '0',
-        top: '50%',
-        height: '2px',
-        marginTop: '-1px',
-        background: '#fff',
-        content: `''`,
-        transform: 'translateY(-24px)',
-        transform: 'rotate(-45deg)',
-        animation: `''`
-    }
-
     componentDidMount() {
         window.addEventListener('scroll', this.handleScroll);
     }
@@ -160,29 +106,29 @@ class Main extends PureComponent {
                 <nav ref={this.scrollRef}>
                     <ul>
                         <li>
-                            {this.state.home ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
+                            {this.state.home ? <div className='beforeNormal'></div> : <div className='before'></div>}
                             <Link onClick={this.clickHome} to='/home'>Home</Link>
-                            {this.state.home ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
+                            {this.state.home ? <div className='afterNormal'></div> : <div className='after'></div>}
                         </li>
                         <li>
-                            {this.state.timer ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
+                            {this.state.timer ? <div className='beforeNormal'></div> : <div className='before'></div>}
                             <Link onClick={this.clickTimer} to='/timer'>Timer</Link>
-                            {this.state.timer ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
+                            {this.state.timer ? <div className='afterNormal'></div> : <div className='after'></div>}
                         </li>
                         <li>
-                            {this.state.about ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
+                            {this.state.about ? <div className='beforeNormal'></div> : <div className='before'></div>}
                             <Link onClick={this.clickAboutUs} to='/aboutUs'>AboutUs</Link>
-                            {this.state.about ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
+                            {this.state.about ? <div className='afterNormal'></div> : <div className='after'></div>}
                         </li>
                         <li>
-                            {this.state.news ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
+                            {this.state.news ? <div className='beforeNormal'></div> : <div className='before'></div>}
                             <Link onClick={this.clickNews} to='/news'>News</Link>
-                            {this.state.news ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
+                            {this.state.news ? <div className='afterNormal'></div> : <div className='after'></div>}
                         </li>
                         <li>
-                            {this.state.gallery ? <div style={this.beforeNormal}></div> : <div style={this.before}></div>}
+                            {this.state.gallery ? <div className='beforeNormal'></div> : <div className='before'></div>}
                             <Link onClick={this.clickGallery} to='/gallery'>Gallery</Link> {/*2019 2018 2017 * 1초만에 보기*/}
-                            {this.state.gallery ? <div style={this.afterNormal}></div> : <div style={this.after}></div>}
+                            {this.state.gallery ? <div className='afterNormal'></div> : <div className='after'></div>}
                         </li>
                     </ul>
                 </nav>
