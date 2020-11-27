@@ -75,7 +75,7 @@ const FlipUnitContainer = ({ digit, shuffle, unit }) => {
 class Timer extends PureComponent {
     state = {
         days: 0,
-        daysSuffle: true,
+        daysShuffle: true,
         hours: 0,
         hoursShuffle: true,
         minutes: 0,
@@ -99,10 +99,10 @@ class Timer extends PureComponent {
         const minutes = time.getMinutes();
         const seconds = time.getSeconds();
         if (days !== this.state.days) {
-            const daysSuffle = !this.state.daysSuffle;
+            const daysShuffle = !this.state.daysShuffle;
             this.setState({
                 days,
-                daysSuffle
+                daysShuffle
             });
         }
 
@@ -137,7 +137,7 @@ class Timer extends PureComponent {
             hours,
             minutes,
             seconds,
-            daysSuffle,
+            daysShuffle,
             hoursShuffle,
             minutesShuffle,
             secondsShuffle
@@ -149,10 +149,9 @@ class Timer extends PureComponent {
                     <FlipUnitContainer
                         unit={'days'}
                         digit={days}
-                        shuffle={daysSuffle}
+                        shuffle={daysShuffle}
                     />
                     <div className={'flipClock'}>
-
                         <FlipUnitContainer
                             unit={'hours'}
                             digit={hours}
