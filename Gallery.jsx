@@ -44,7 +44,6 @@ class Gallery extends PureComponent {
         })
         this.carousel.current.style.transform = `rotateX(-10deg) rotateY(${this.state.deg-10}deg)`
     }
-    
 
     onClickChoice=()=>{
         this.setState(({
@@ -94,6 +93,7 @@ class Gallery extends PureComponent {
             </>
         )
     }
+
 
     render() {
         return (
