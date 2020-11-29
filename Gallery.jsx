@@ -74,7 +74,7 @@ class Gallery extends PureComponent {
                             <li ref={this.choice} onClick={this.onClickChoice} key={idx}
                             style={{
                                 backgroundImage: `url('./MYBOX/_(${idx+1}).jpg')`,
-                                transform: `rotateY(${degPerCell*(idx)}deg) translateZ(550px)`,
+                                transform: `rotateY(${degPerCell*(idx)}deg) translateZ(551px)`,
                             }}
                             className={'choice'}>
                             </li>}
