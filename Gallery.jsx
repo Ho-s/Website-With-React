@@ -58,6 +58,10 @@ class Gallery extends PureComponent {
         }))
         this.carousel.current.style.display='block'
     }
+    
+    handleScroll=()=>{
+        
+    }
 
     makeCarouselCell=()=>{
         const cellCount=36
