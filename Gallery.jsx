@@ -59,8 +59,9 @@ class Gallery extends PureComponent {
         this.carousel.current.style.display='block'
     }
     
-    handleScroll=()=>{
-        
+    handleScroll=(e)=>{
+        const x=e.clientX
+        const y=e.clientY
     }
 
     makeCarouselCell=()=>{
