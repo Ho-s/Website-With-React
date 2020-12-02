@@ -60,8 +60,14 @@ class Gallery extends PureComponent {
     }
     
     handleScroll=(e)=>{
-        const x=e.clientX
-        const y=e.clientY
+        window.addEventListener('mousemove',()=>{
+            const x=e.clientX
+            console.log(x)
+        })
+    }
+
+    removeHandelScroll=()=>{
+        window.removeEventListene
     }
 
     makeCarouselCell=()=>{
@@ -113,7 +119,7 @@ class Gallery extends PureComponent {
                         <div onClick={this.clickRight} className='full-right'>&#8594;</div>
                     </div>
                     }
-                    <div className='scene'>
+                    <div onMouseDown={this.handleScroll} onMouseUp={this.removeHandelScroll} className='scene'>
                         <ul ref={this.carousel} className='carousel'>
                             <this.makeCarouselCell/>
                             {/* {this.makeCarouselCell()} */}
