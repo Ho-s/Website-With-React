@@ -67,7 +67,7 @@ class Gallery extends PureComponent {
     }
 
     removeHandelScroll=()=>{
-        window.removeEventListene
+        window.removeEventListener('mousemove',all)
     }
 
     makeCarouselCell=()=>{
