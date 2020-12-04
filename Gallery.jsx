@@ -61,7 +61,8 @@ class Gallery extends PureComponent {
     
     handleScroll=(e)=>{
         window.addEventListener('mousemove',()=>{
-            const x=e.clientX
+            const prevX=e.clientX
+            const nowX=prevX
             console.log(x)
         })
     }
