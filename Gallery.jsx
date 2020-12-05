@@ -63,6 +63,8 @@ class Gallery extends PureComponent {
         window.addEventListener('mousemove',()=>{
             const prevX=e.clientX
             const nowX=prevX
+            const position=prevX-nowX
+            this.carousel.current.style.transform = `rotateX(-10deg) rotateY(${position}deg)`
             console.log(x)
         })
     }
