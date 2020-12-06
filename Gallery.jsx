@@ -59,8 +59,8 @@ class Gallery extends PureComponent {
         this.carousel.current.style.display='block'
     }
     
-    handleScroll=(e)=>{
-        window.addEventListener('mousemove',()=>{
+    handleScroll=()=>{
+        window.addEventListener('mousemove',(e)=>{
             const prevX=e.clientX
             const nowX=prevX
             const position=prevX-nowX
@@ -70,7 +70,7 @@ class Gallery extends PureComponent {
     }
 
     removeHandelScroll=()=>{
-        window.removeEventListener('mousemove',all)
+        window.removeEventListener
     }
 
     makeCarouselCell=()=>{
