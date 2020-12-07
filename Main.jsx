@@ -4,7 +4,9 @@ import Home from './Home'
 import Timer from './Timer'
 import AboutUs from './AboutUs'
 import News from './News'
-import Gallery from './Gallery'
+import GalleryZero from './GalleryZero'
+import GalleryNine from './GalleryNine'
+import GalleryEight from './GalleryEight'
 
 class Main extends PureComponent {
     state = {
@@ -12,7 +14,9 @@ class Main extends PureComponent {
         timer: false,
         about: false,
         news: false,
-        gallery: false,
+        galleryEight: false,
+        galleryNine:false,
+        galleryZero:false,
     }
 
     scrollRef = createRef()
@@ -45,6 +49,9 @@ class Main extends PureComponent {
             about: false,
             news: false,
             gallery: false,
+            galleryEight: false,
+            galleryNine:false,
+            galleryZero:false,
         })
     }
 
@@ -55,6 +62,9 @@ class Main extends PureComponent {
             about: false,
             news: false,
             gallery: false,
+            galleryEight: false,
+            galleryNine:false,
+            galleryZero:false,
         })
     }
 
@@ -65,6 +75,9 @@ class Main extends PureComponent {
             about: true,
             news: false,
             gallery: false,
+            galleryEight: false,
+            galleryNine:false,
+            galleryZero:false,
         })
     }
 
@@ -75,16 +88,48 @@ class Main extends PureComponent {
             about: false,
             news: true,
             gallery: false,
+            galleryEight: false,
+            galleryNine:false,
+            galleryZero:false,
         })
     }
 
-    clickGallery = () => {
+    clickGalleryEight = () => {
         this.setState({
             home: false,
             timer: false,
             about: false,
             news: false,
             gallery: true,
+            galleryEight: true,
+            galleryNine:false,
+            galleryZero:false,
+        })
+    }
+
+    clickGalleryNine = () => {
+        this.setState({
+            home: false,
+            timer: false,
+            about: false,
+            news: false,
+            gallery: true,
+            galleryEight: false,
+            galleryNine:true,
+            galleryZero:false,
+        })
+    }
+
+    clickGalleryZero = () => {
+        this.setState({
+            home: false,
+            timer: false,
+            about: false,
+            news: false,
+            gallery: true,
+            galleryEight: false,
+            galleryNine:false,
+            galleryZero:true,
         })
     }
 
@@ -125,9 +170,14 @@ class Main extends PureComponent {
                             <Link onClick={this.clickNews} to='/news'>News</Link>
                             {this.state.news ? <div className='afterNormal'></div> : <div className='after'></div>}
                         </li>
-                        <li>
+                        <li className='gallery' style={{color:'white'}} >
                             {this.state.gallery ? <div className='beforeNormal'></div> : <div className='before'></div>}
-                            <Link onClick={this.clickGallery} to='/gallery'>Gallery</Link> {/*2019 2018 2017 * 1초만에 보기*/}
+                            Gallery
+                            <div className='galleryList'>  
+                                <Link onClick={this.clickGalleryZero} to='/galleryZero'>2020</Link>
+                                <Link onClick={this.clickGalleryNine} to='/galleryNine'>2019</Link>
+                                <Link onClick={this.clickGalleryEight} to='/galleryEight'>2018</Link>
+                            </div>
                             {this.state.gallery ? <div className='afterNormal'></div> : <div className='after'></div>}
                         </li>
                     </ul>
@@ -137,10 +187,12 @@ class Main extends PureComponent {
                     <Route path='/timer' component={Timer}></Route>
                     <Route path='/aboutUs' component={AboutUs}></Route>
                     <Route path='/news' component={News}></Route>
-                    <Route path='/gallery' component={Gallery}></Route>
+                    <Route path='/galleryZero' component={GalleryZero}></Route>
+                    <Route path='/galleryNine' component={GalleryNine}></Route>
+                    <Route path='/galleryEight' component={GalleryEight}></Route>
                 </div>
                 <div style={{padding: '70px 0',width: `100%`,float: 'right',backgroundColor:'white',textAlign:'center'}}>
-                    <div >Ho-s ©2020·Privacy Policy</div>
+                    <div>Ho-s ©2020·Privacy Policy</div>
                     <div>https://github.com/Ho-s</div>
                 </div>
             </BrowserRouter>

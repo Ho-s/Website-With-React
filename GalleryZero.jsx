@@ -58,20 +58,6 @@ class Gallery extends PureComponent {
         }))
         this.carousel.current.style.display='block'
     }
-    
-    handleScroll=()=>{
-        window.addEventListener('mousemove',(e)=>{
-            const prevX=e.clientX
-            const nowX=prevX
-            const position=prevX-nowX
-            this.carousel.current.style.transform = `rotateX(-10deg) rotateY(${position}deg)`
-            console.log(x)
-        })
-    }
-
-    removeHandelScroll=()=>{
-        window.removeEventListener
-    }
 
     makeCarouselCell=()=>{
         const cellCount=36
@@ -87,8 +73,8 @@ class Gallery extends PureComponent {
                             {className && 
                             <li ref={this.choice} onClick={this.onClickChoice} key={idx}
                             style={{
-                                backgroundImage: `url('./MYBOX/_(${idx+1}).jpg')`,
-                                transform: `rotateY(${degPerCell*(idx)}deg) translateZ(551px)`,
+                                backgroundImage: `url('./MYBOX/_ (${idx+1}).PNG')`,
+                                transform: `rotateY(${degPerCell*(idx)}deg) translateZ(550px)`,
                             }}
                             className={'choice'}>
                             </li>}
@@ -96,7 +82,7 @@ class Gallery extends PureComponent {
                             {!className &&
                             <li ref={this.cell} key={idx}
                             style={{
-                                backgroundImage: `url('./MYBOX/_(${idx+1}).jpg')`,
+                                backgroundImage: `url('./MYBOX/_ (${idx+1}).PNG')`,
                                 transform: `rotateY(${degPerCell*(idx)}deg) translateZ(500px)`,
                             }}
                             className={'carousel_cell'}>
@@ -108,7 +94,6 @@ class Gallery extends PureComponent {
         )
     }
 
-
     render() {
         return (
             <>
@@ -118,11 +103,12 @@ class Gallery extends PureComponent {
                         <div className='full-top'>{this.state.n+1}/36</div>
                         <div onClick={this.onLeaveChoice} className='full-button'>X</div>
                         <div onClick={this.clickLeft} className='full-left'>&#8592;</div>
-                        <div style={{ backgroundImage: `url('./MYBOX/_(${this.state.n+1}).jpg')` }} className='full-middle'></div>
+                        <div style={{ backgroundImage: `url('./MYBOX/_ (${this.state.n+1}).jpg')` }} className='full-middle'></div>
                         <div onClick={this.clickRight} className='full-right'>&#8594;</div>
                     </div>
                     }
-                    <div onMouseDown={this.handleScroll} onMouseUp={this.removeHandelScroll} className='scene'>
+
+                    <div className='scene'>
                         <ul ref={this.carousel} className='carousel'>
                             <this.makeCarouselCell/>
                             {/* {this.makeCarouselCell()} */}
@@ -130,6 +116,7 @@ class Gallery extends PureComponent {
                         <button className='button-left' onClick={this.clickLeft}>&#8592;</button>
                         <button className='button-right' onClick={this.clickRight}>&#8594;</button>
                     </div>
+
                 </div>
             </>
         )
