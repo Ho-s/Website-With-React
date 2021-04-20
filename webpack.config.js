@@ -1,46 +1,46 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const prod = process.env.NODE_ENV === 'production';
+const webpack = require('webpack');
 const path = require('path');
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
 module.exports = {
-  mode: 'development',
-  devtool: 'inline-source-map',
-  resolve: {
-    extensions: ['.js', '.jsx','tsx'],
-  },
-  entry: {
-    app: './client',
-  },
-  module: {
-    rules: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
-      options: {
-        presets: [
-          ['@babel/preset-env', {
-            targets: { browsers: ['last 2 chrome versions'] },
-            debug: true,
-          }],
-          '@babel/preset-react',
-        ],
-        plugins: [
-          'react-refresh/babel',
-          '@babel/plugin-proposal-class-properties',
-        ],
-      },
-      exclude: path.join(__dirname, 'node_modules'),
-    }],
-  },
-  plugins: [
-    new ReactRefreshWebpackPlugin(),
-  ],
-  output: {
-    path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
-    publicPath: '/dist',
-  },
   devServer: {
     historyApiFallback: true,
-    publicPath: '/dist',
-    hot: true
-  }
+    inline: true,
+    port: 3000,
+    hot: true,
+    publicPath: '/',
+  },
+  mode: prod ? 'production' : 'development',
+  devtool: prod ? 'hidden-source-map' : 'eval',
+
+  entry: './client.tsx',
+
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx'],
+  },
+
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: ['babel-loader', 'ts-loader'],
+      },
+    ],
+  },
+
+	output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'bundle.js',
+  },
+
+  plugins: [
+		new webpack.ProvidePlugin({
+      React: 'react',
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({
+      template: './index.html',
+    }),
+  ],
 };
